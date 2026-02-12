@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title>Name Reverser</title>
+  </head>
+  <body>
+    <p>Q9. Dibya Shakya</p>
+    <div class="container">
+      <h1>Name Reverser</h1>
+      <input type="text" id="firstName" placeholder="Enter your first name" />
+      <br /><br />
+      <input type="text" id="lastName" placeholder="Enter your last name" />
+      <br /><br />
+      <button onclick="reverseName()">Reverse Name</button>
+      <br /><br />
+      <div id="result"></div>
+    </div>
+
+    <script>
+      function reverseName() {
+        var firstName = document.getElementById("firstName").value.trim();
+        var lastName = document.getElementById("lastName").value.trim();
+
+        // optional
+        if (firstName === "" || lastName === "") {
+          alert("Please enter both first and last name!");
+          return;
+        }
+
+        var reversedName = lastName + " " + firstName;
+
+        var resultDiv = document.getElementById("result");
+        resultDiv.innerHTML = "Reversed Name: " + reversedName;
+      }
+
+      //   optional
+      document.addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+          reverseName();
+        }
+      });
+    </script>
+  </body>
+</html>

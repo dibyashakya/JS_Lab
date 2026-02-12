@@ -1,0 +1,93 @@
+<html>
+  <head>
+    <title>Basic Calculator</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        align-content: center;
+      }
+      .calculator {
+        border: 5px solid #aea3b0;
+        padding: 10px;
+        width: 350px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 5px;
+        background: #8e7f8e;
+      }
+      input {
+        height: 40px;
+        font-size: 20px;
+        grid-column: 1 / 4;
+        background: #aea3b0;
+        outline: none;
+        border: none;
+        color: #333;
+      }
+      button {
+        height: 40px;
+        cursor: pointer;
+        background: #aea3b0;
+        border: none;
+        border-radius: 2px;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div class="calculator">
+      <p>Q2. Dibya Shakya</p>
+      <input type="text" id="display" readonly />
+      <button onclick="clearDisplay()">C</button>
+      <button onclick="appendNumber('1')">1</button>
+      <button onclick="appendNumber('2')">2</button>
+      <button onclick="appendNumber('3')">3</button>
+      <button onclick="appendOperator('+')">+</button>
+
+      <button onclick="appendNumber('4')">4</button>
+      <button onclick="appendNumber('5')">5</button>
+      <button onclick="appendNumber('6')">6</button>
+      <button onclick="appendOperator('-')">-</button>
+
+      <button onclick="appendNumber('7')">7</button>
+      <button onclick="appendNumber('8')">8</button>
+      <button onclick="appendNumber('9')">9</button>
+      <button onclick="appendNumber('10')">10</button>
+
+      <button onclick="appendNumber('0')">0</button>
+      <button onclick="appendOperator('*')">*</button>
+      <button onclick="appendOperator('/')">/</button>
+      <button onclick="calculate()">=</button>
+    </div>
+
+    <script>
+      function appendNumber(num) {
+        document.getElementById("display").value += num;
+      }
+
+      function appendOperator(op) {
+        const display = document.getElementById("display");
+        const lastChar = display.value.slice(-1);
+        if ("+-*/".includes(lastChar)) return; // prevent double operators
+        display.value += op;
+      }
+
+      function clearDisplay() {
+        document.getElementById("display").value = "";
+      }
+
+      function calculate() {
+        const display = document.getElementById("display");
+        try {
+          display.value = eval(display.value);
+        } catch {
+          display.value = "Error";
+        }
+      }
+    </script>
+  </body>
+</html>

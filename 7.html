@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JS Dynamic Menu</title>
+    <style>
+      .modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+      }
+
+      .modal-content {
+        background: white;
+        padding: 20px;
+        width: 200px;
+        margin: 100px auto;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Q7. Dibya Shakya</p>
+    <button onclick="openModal()">Open Modal</button>
+
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <p>This is a modal</p>
+        <button onclick="closeModal()">Close</button>
+      </div>
+    </div>
+
+    <script>
+      function openModal() {
+        document.getElementById("modal").style.display = "block";
+      }
+
+      function closeModal() {
+        document.getElementById("modal").style.display = "none";
+      }
+    </script>
+  </body>
+</html>

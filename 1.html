@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <title>Basic Arithmetic Functions</title>
+    <style>
+      body {
+        text-align: center;
+        margin-top: 50px;
+      }
+      input,
+      button {
+        margin: 10px;
+        padding: 10px;
+        font-size: 16px;
+      }
+      #container {
+        display: inline-block;
+        border: 2px solid black;
+        padding: 20px;
+        border-radius: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Q1. Dibya Shakya </p>
+    <div id="container">
+      <h2>Basic Arithmetic Functions</h2>
+
+      <input type="number" id="operand1" placeholder="Operand" /><br />
+      <input type="number" id="operand2" placeholder="Operand" /><br />
+
+      <button onclick="calculate('add')">Add</button>
+      <button onclick="calculate('sub')">Sub</button>
+      <button onclick="calculate('mul')">Mul</button><br />
+      <button onclick="calculate('div')">Div</button>
+      <button onclick="calculate('mod')">Mod</button><br />
+
+      <h3>Result:</h3>
+      <input type="text" id="result" readonly />
+    </div>
+
+    <script>
+      function calculate(operation) {
+        const op1 = parseFloat(document.getElementById("operand1").value);
+        const op2 = parseFloat(document.getElementById("operand2").value);
+        let res;
+
+        if (isNaN(op1) || isNaN(op2)) {
+          res = "Invalid input";
+        } else {
+          switch (operation) {
+            case "add":
+              res = op1 + op2;
+              break;
+            case "sub":
+              res = op1 - op2;
+              break;
+            case "mul":
+              res = op1 * op2;
+              break;
+            case "div":
+              res = op2 !== 0 ? op1 / op2 : "Divide by 0 error";
+              break;
+            case "mod":
+              res = op2 !== 0 ? op1 % op2 : "Divide by 0 error";
+              break;
+          }
+        }
+
+        document.getElementById("result").value = res;
+      }
+    </script>
+  </body>
+</html>

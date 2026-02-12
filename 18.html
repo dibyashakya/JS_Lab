@@ -1,0 +1,89 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>Q18. Dibya Shakya</p>
+
+    <form onsubmit="handleSubmit(event)" name="myForm">
+      <label for="name">Name: </label>
+      <input type="text" id="name" name="name" placeholder="Name" />
+      <br /><br />
+      <label for="email">Email: </label>
+      <input type="email" id="email" name="email" placeholder="Email" />
+      <br /><br />
+      <label for="age">Age: </label>
+      <input type="number" id="age" name="age" placeholder="Age" />
+      <br /><br />
+      <label for="password">Password: </label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Password"
+      />
+      <br /><br />
+      <button type="submit">Submit</button>
+    </form>
+
+    <script>
+      function handleSubmit(event) {
+        event.preventDefault();
+
+        const form = document.forms["myForm"];
+        const formData = new FormData(form);
+
+        const name = formData.get("name").trim();
+        const email = formData.get("email").trim();
+        const phone = formData.get("phone");
+        const age = formData.get("age");
+
+        const password = formData.get("password").trim();
+
+        if (!name) {
+          alert("Name is required");
+          return;
+        }
+
+        if (!email) {
+          alert("Email is required");
+          return;
+        }
+
+        if (age<8 || age >60) {
+          alert("Age is invalid");
+          return;
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+        if (!emailRegex.test(email)) {
+          alert("Please enter a valid email");
+          return;
+        }
+
+        if (!password) {
+          alert("Password is required");
+          return;
+        }
+
+        const passwordRegex =
+          passwordRegex = /^[a-zA-Z][a-zA-Z\d]{4,}\d$/
+        if (!passwordRegex.test(password)) {
+          alert(
+            "Password must be at least 8 characters long and should contain at least one uppercase letter, one lowercase letter, one number and one symbol",
+          );
+          return;
+        }
+
+        console.log("Form data:", {
+          name,
+          email,
+          password,
+        });
+        alert("Form submitted successfully!");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JS Dynamic Menu</title>
+
+    <style>
+      nav {
+        background: #333;
+      }
+      nav ul {
+        list-style: none;
+        padding: 10px;
+        gap: 20px;
+      }
+      nav > ul {
+        display: flex;
+        gap: 20px;
+      }
+      nav li {
+        position: relative;
+      }
+      nav a {
+        color: white;
+        text-decoration: none;
+        padding: 6px 8px;
+        display: inline-block;
+      }
+      nav a:hover {
+        text-decoration: underline;
+      }
+      .dropdown {
+        position: absolute;
+        top: 32px;
+        left: 0;
+        background: white;
+        min-width: 200px;
+        border: 1px solid #ccc;
+      }
+      .dropdown.hide {
+        display: none;
+      }
+      .dropdown a {
+        color: black;
+        padding: 8px 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Q6. Dibya Shakya</p>
+    <nav>
+      <ul>
+        <li><a href="/home">Home</a></li>
+
+        <li id="services">
+          <a href="#">Services</a>
+          <ul class="dropdown hide" id="servicesSubMenu">
+            <li><a href="/services/web">Web Development</a></li>
+            <li><a href="/services/mobile">Mobile Apps</a></li>
+            <li><a href="/services/seo">SEO</a></li>
+          </ul>
+        </li>
+
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <script>
+      const servicesMenu = document.getElementById("services");
+      const servicesSubMenu = document.getElementById("servicesSubMenu");
+
+      servicesMenu.addEventListener("click", (event) => {
+        event.preventDefault();
+        servicesSubMenu.classList.toggle("hide");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <p>Q14. Dibya Shakya</p>
+
+    <button onclick="showMessage()">Show Message</button>
+    <button onclick="confirmFromUser()">Confirm Delete</button>
+    <button onclick="inputName()">Input Name</button>
+
+    <script>
+      function showMessage() {
+        alert("This is your message");
+      }
+
+      function confirmFromUser() {
+        let isConfirmed = confirm("Are your Sure to delete?");
+        isConfirmed ? alert("Deleted") : alert("Cancelled");
+      }
+
+      function inputName() {
+        let name = prompt("Enter your name");
+        name ? alert(`Your name is ${name}`) : alert("Empty");
+      }
+    </script>
+  </body>
+</html>
