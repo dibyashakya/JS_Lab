@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <title>JS Dynamic Menu</title>
-
     <style>
       nav {
         background: #333;
@@ -50,8 +49,9 @@
     <p>Q6. Dibya Shakya</p>
     <nav>
       <ul>
-        <li><a href="/home">Home</a></li>
-
+        <li>
+          <a href="/home">Home</a>
+        </li>
         <li id="services">
           <a href="#">Services</a>
           <ul class="dropdown" id="servicesSubMenu">
@@ -60,16 +60,13 @@
             <li><a href="/services/seo">SEO</a></li>
           </ul>
         </li>
-
-        <li><a href="/about">About</a></li>
+        <li><a href="/about.html">About</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
     </nav>
-
     <script>
       const servicesMenu = document.getElementById("services");
       const servicesSubMenu = document.getElementById("servicesSubMenu");
-
       servicesMenu.addEventListener("click", (event) => {
         event.preventDefault();
         servicesSubMenu.classList.toggle("hide");

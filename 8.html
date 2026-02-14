@@ -1,17 +1,9 @@
 <html>
   <head>
     <title>Background Color Selector</title>
-    <style>
-      body {
-        margin: 0;
-        padding: 20px;
-        min-height: 100vh;
-      }
-    </style>
   </head>
   <body>
     <p>Q8. Dibya Shakya</p>
-
     <h1>Choose Background Color</h1>
     <form id="form">
       <input type="radio" id="green" name="color" value="green" />
@@ -20,21 +12,18 @@
       <input type="radio" id="red" name="color" value="red" />
       <label for="red">Red</label>
       <br /><br />
-      <input type="radio" id="blue" name="color" value="blue" />
-      <label for="blue">Blue</label>
+      <input type="radio" id="blue" name="color" value="lightblue" />
+      <label for="blue">Lightblue</label>
       <br /><br />
-      <input type="radio" id="black" name="color" value="black" />
-      <label for="black">Black</label>
+      <input type="radio" id="pink" name="color" value="pink" />
+      <label for="pink">Pink</label>
     </form>
-
     <script>
       const radioButtons = document.querySelectorAll('input[name="color"]');
 
-      // Add event listener to each radio button
       radioButtons.forEach((radio) => {
         radio.addEventListener("change", function () {
           if (this.checked) {
-            // Change the background color of the body
             document.body.style.backgroundColor = this.value;
           }
         });
