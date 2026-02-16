@@ -14,20 +14,16 @@
       <br /><br />
       <div id="result"></div>
     </div>
-
     <script>
       function reverseName() {
         var firstName = document.getElementById("firstName").value.trim();
         var lastName = document.getElementById("lastName").value.trim();
-
-        // optional
         if (firstName === "" || lastName === "") {
           alert("Please enter both first and last name!");
           return;
         }
 
         var reversedName = lastName + " " + firstName;
-
         var resultDiv = document.getElementById("result");
         resultDiv.innerHTML = "Reversed Name: " + reversedName;
       }
