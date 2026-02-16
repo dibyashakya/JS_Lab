@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="myBtn">Click Me</button>
+
+    <script>
+      const button = document.getElementById("myBtn");
+
+      button.addEventListener("click", function (event) {
+        console.log(event); // The full event object
+        console.log(event.type); // "click"
+        console.log(event.target); // The button element
+        console.log(event.clientX); // Mouse X position
+        console.log(event.clientY); // Mouse Y position
+      });
+    </script>
+  </body>
+</html>
